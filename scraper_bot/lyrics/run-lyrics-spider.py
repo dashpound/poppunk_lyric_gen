@@ -19,6 +19,8 @@ def list_all(current_directory):
         subindent = ' ' * 4 * (level + 1)
         for f in files:
             print('{}{}'.format(subindent, f))
+            
+
 
 # initial directory should have this form (except for items beginning with .):
 #    TOP-LEVEL-DIRECTORY-FOR-SCRAPY-WORK
@@ -53,8 +55,8 @@ os.system('scrapy list')
 # os.system('scrapy crawl quotes -o items.json')
 
 # for JSON lines we use this command
-os.system('scrapy crawl lyrics_scraper -o items.jsonlines')
-print('\nJSON lines written to items.jsonlines\n')
+#os.system('scrapy crawl lyrics_scraper -o items.jsonlines')
+#print('\nJSON lines written to items.jsonlines\n')
 
 print('---------------------------------------------------------')
 

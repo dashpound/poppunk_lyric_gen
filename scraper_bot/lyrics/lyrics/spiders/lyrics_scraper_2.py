@@ -17,7 +17,6 @@ from scrapy.linkextractors import LinkExtractor
 import os.path
 from lyrics.items import LyricsItem  # item class 
 
-
 #%%
 class LyricsScraperSpider2(CrawlSpider):
     name = 'lyrics_scraper2'
@@ -25,12 +24,12 @@ class LyricsScraperSpider2(CrawlSpider):
     start_urls = ["https://www.azlyrics.com/r/realfriends.html",]
     
     rules = (
-        Rule(LinkExtractor(allow=('', )), callback='parse_item'),
-        )
+        Rule(LinkExtractor(allow=('https://www.azlyrics.com/lyrics/', )), 
+             callback='parse_item'),)
     
 
     def parse_item(self, response):
-        page = response.url.split("/")[4]
+        page = response.url.split("/")[-1]
         page_dirname = 'songpages'
         filename = '%s.html' % page
         with open(os.path.join(page_dirname,filename), 'wb') as f:
