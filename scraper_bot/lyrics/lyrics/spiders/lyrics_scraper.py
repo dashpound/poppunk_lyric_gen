@@ -50,7 +50,7 @@ class LyricsScraperSpider(scrapy.Spider):
         item = LyricsItem()
         item['url'] = response.url
         item['title'] = response.css('h1::text').extract_first()
-        item['text'] = response.xpath('//div[@id="mw-content-text"]//text()')\
+        item['text'] = response.xpath('//div/text()')\
                            .extract()                                                             
         #tags_list = [response.url.split("/")[2],
         #             response.url.split("/")[3]]
