@@ -14,4 +14,3 @@ class LyricsItem(scrapy.Item):
     url = scrapy.Field() 
     title = scrapy.Field()
     text = scrapy.Field()
-    tags = scrapy.Field()

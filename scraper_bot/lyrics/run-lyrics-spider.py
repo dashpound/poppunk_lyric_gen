@@ -56,5 +56,12 @@ os.system('scrapy list')
 os.system('scrapy crawl lyrics_scraper -o items.jsonlines')
 print('\nJSON lines written to items.jsonlines\n')
 
+print('---------------------------------------------------------')
+
+
+os.system('scrapy crawl lyrics_scraper2 -o items2.jsonlines')
+print('\nJSON lines written to items2.jsonlines\n')
+
+
 # run the scraper exporting results as a dictionary XML text file items.xml
 # os.system('scrapy crawl quotes -o items.xml')
