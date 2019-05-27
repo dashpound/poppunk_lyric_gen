@@ -7,7 +7,6 @@
 # Establish working environment
 # =============================================================================
 
-import multiprocessing
 import re,string
 import os
 from pprint import pprint
@@ -16,10 +15,7 @@ import json
 import pandas as pd
 import numpy as np
 
-from sklearn.feature_extraction.text import TfidfVectorizer,\
-    CountVectorizer, HashingVectorizer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cross_decomposition import CCA  # canonical correlation
 from sklearn.model_selection import train_test_split
 
@@ -42,7 +38,7 @@ VECTOR_LENGTH_LIST = [8, 16, 32, 64, 128, 256, 512]  # set vector length for TF-
 WRITE_VECTORS_TO_FILE = True
 
 # JSON lines file for storing canonical correlatin results across many runs
-cancor_results_file = open('cancor-results-file.jsonlines', 'a+') # open new file or append to existing
+cancor_results_file = open(r'C:\Users\johnk\Desktop\Grad School\6. Spring 2019\1. MSDS_453_NLP\6. Homework\week8\preprocessing\results\cancor-results-file.jsonlines', 'a+') # open new file or append to existing
 
 #%%
 # =============================================================================
@@ -262,7 +258,7 @@ for VECTOR_LENGTH in VECTOR_LENGTH_LIST:
 
     if WRITE_VECTORS_TO_FILE:
         tfidf_file_name = 'tfidf-matrix-'+ str(VECTOR_LENGTH) + '.csv'
-        matrix.to_csv(tfidf_file_name)
+        matrix.to_csv(r'C:/Users/johnk/Desktop/Grad School/6. Spring 2019/1. MSDS_453_NLP/6. Homework/week8/preprocessing/results/' + tfidf_file_name)
         print('\nTF-IDF vectorization complete, matrix saved to ', tfidf_file_name, '\n')
 
     # =============================================================================
@@ -293,7 +289,7 @@ for VECTOR_LENGTH in VECTOR_LENGTH_LIST:
 
     if WRITE_VECTORS_TO_FILE:
         doc2vec_file_name = 'doc2vec-matrix-'+ str(VECTOR_LENGTH) + '.csv'
-        doc2vec_df.to_csv(doc2vec_file_name)
+        doc2vec_df.to_csv(r'C:/Users/johnk/Desktop/Grad School/6. Spring 2019/1. MSDS_453_NLP/6. Homework/week8/preprocessing/results/'+ doc2vec_file_name)
         print('\nDoc2Vec vectorization complete, matrix saved to ', doc2vec_file_name, '\n')
 
     # =============================================================================
