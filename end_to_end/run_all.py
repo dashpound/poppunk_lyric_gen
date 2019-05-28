@@ -84,10 +84,12 @@ print('End of Script 4--------------------------')
 # Written by: NA
 # Last Modified by: NA
 #
-# Placeholder incase additional transformation is required prior ro Keras
+# Actual recurrent neural network; based on code from Taylor Swift AI lyric generator.
+# https://colab.research.google.com/drive/1wlZXZBvOo93pAmTtEUeTlPsgAP4D1bLA#scrollTo=I5EngGk8YuJv
+# https://github.com/minimaxir/textgenrnn
 # 
-# Notes: This process is not yet developed
+# Note: THIS TAKES SEVERAL HOURS AND A LOT OF COMPUTING RESORUCES TO RUN
 # =============================================================================
 
-#exec(open(dirs+"\preprocessing\prepare_words_as_tokens.py").read());
+exec(open(dirs+"\rnn\rnn.py").read());
 print('End of Script 5--------------------------')
