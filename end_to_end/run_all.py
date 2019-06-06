@@ -13,7 +13,13 @@
 # 0.1 | Define Globabl Variables
 # =============================================================================
 # Put working directories/paths here...
+import os
+# put the path of where the RNNs are located h
+os.chdir(r'C:\Users\johnk\Desktop\Grad School\6. Spring 2019\1. MSDS_453_NLP\6. Homework\week8\rnn')
+
+# put the location of the parent git controlled folder
 dirs=r'C:\Users\johnk\Desktop\Grad School\6. Spring 2019\1. MSDS_453_NLP\6. Homework\week8'
+
 
 # =============================================================================
 # 1.0 | Execute Scraping
@@ -30,7 +36,7 @@ dirs=r'C:\Users\johnk\Desktop\Grad School\6. Spring 2019\1. MSDS_453_NLP\6. Home
 # =============================================================================
 
 #exec(open(dirs+"\scraper_bot\lyrics\run-lyrics-spider.py").read());
-print('End of Script 1--------------------------')
+print('Skip Script 1--------------------------')
 
 # =============================================================================
 # 2.0 | Preprocess Text -- Lines as Tokens
@@ -64,22 +70,26 @@ print('End of Script 2--------------------------')
 exec(open(dirs+"\preprocessing\prepare_words_as_tokens.py").read());
 print('End of Script 3--------------------------')
 
+
 # =============================================================================
-# 4.0 | Preprocess Text -- May need to introduce further scrubbing
+# 4.0 | Train & Print Recurrent Neural Network
 # =============================================================================
-# Written by: NA
-# Last Modified by: NA
+# Written by: John Kiley --> Model based on articles linked below
+# Last Modified by: 06/05/2019 | John Kiley
 #
-# Placeholder incase additional transformation is required prior ro Keras
+# Actual recurrent neural network; based on code from Taylor Swift AI lyric generator.
+# https://colab.research.google.com/drive/1wlZXZBvOo93pAmTtEUeTlPsgAP4D1bLA#scrollTo=I5EngGk8YuJv
+# https://github.com/minimaxir/textgenrnn
 # 
-# Notes: This process is not yet developed
+# Note: THIS TAKES SEVERAL HOURS AND A LOT OF COMPUTING RESORUCES TO RUN
 # =============================================================================
+# Change working directory
 
-#exec(open(dirs+"\preprocessing\prepare_words_as_tokens.py").read());
-print('End of Script 4--------------------------')
-
+#exec(open(dirs+"\\rnn\\rnn.py").read());
+print('Skip Script 4--------------------------')
+#%%
 # =============================================================================
-# 5.0 | Recurrent Neural Network
+# 5.0 | Skip Training & Only use the model based on weightings
 # =============================================================================
 # Written by: NA
 # Last Modified by: NA
@@ -88,8 +98,8 @@ print('End of Script 4--------------------------')
 # https://colab.research.google.com/drive/1wlZXZBvOo93pAmTtEUeTlPsgAP4D1bLA#scrollTo=I5EngGk8YuJv
 # https://github.com/minimaxir/textgenrnn
 # 
-# Note: THIS TAKES SEVERAL HOURS AND A LOT OF COMPUTING RESORUCES TO RUN
+# Note: This will leverage the pretrained weights to execute the model
 # =============================================================================
 
-exec(open(dirs+"\rnn\rnn.py").read());
+exec(open(dirs+"\\rnn\\rnn_remove_train.py").read());
 print('End of Script 5--------------------------')

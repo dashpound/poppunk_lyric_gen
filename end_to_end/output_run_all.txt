@@ -1,0 +1,246 @@
+Python 3.7.3 (default, Apr 24 2019, 15:29:51) [MSC v.1915 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+
+IPython 7.5.0 -- An enhanced Interactive Python.
+
+Restarting kernel... 
+
+
+ 
+
+runfile('C:/Users/johnk/Desktop/Grad School/6. Spring 2019/1. MSDS_453_NLP/6. Homework/week8/end_to_end/run_all.py', wdir='C:/Users/johnk/Desktop/Grad School/6. Spring 2019/1. MSDS_453_NLP/6. Homework/week8/end_to_end')
+Skip Script 1--------------------------
+
+List of file names in the data directory:
+
+['items2.jsonlines', 'lyrics', 'run-lyrics-spider.py', 'scrapy.cfg', 'songpages']
+
+Beginning and end of the data frame:
+
+
+-------------------------
+
+Dataframe successfully written
+
+-------------------------
+End of Script 2--------------------------
+
+List of file names in the data directory:
+
+['items2.jsonlines', 'lyrics', 'run-lyrics-spider.py', 'scrapy.cfg', 'songpages']
+
+Beginning and end of the data frame:
+
+                                                 url  ...                                               text
+0  https://www.azlyrics.com/lyrics/realfriends/al...  ...   can never keep mouth shut but can sure hell k...
+1  https://www.azlyrics.com/lyrics/realfriends/lo...  ...   try find way out this hole but dug deep and i...
+
+[2 rows x 3 columns]
+                                                  url  ...                                               text
+67  https://www.azlyrics.com/lyrics/realfriends/so...  ...   there are minutes when want leave this town w...
+68  https://www.azlyrics.com/lyrics/realfriends/hi...  ...   youre still indulgent enough quench thirst th...
+
+[2 rows x 3 columns]
+
+Number of training documents: 51
+
+Number of training token lists: 51
+['"Summer" lyrics',
+ '"Short Song" lyrics',
+ '"Mess" lyrics',
+ '"Unconditional Love" lyrics',
+ '"Hebron" lyrics',
+ '"I\'ve Never Been Home" lyrics',
+ '"Dead" lyrics',
+ '"Sixteen" lyrics',
+ '"Alexander Supertramp" lyrics',
+ '"Unconditional Love" lyrics']
+[]
+
+Number of testing documents: 18
+
+Number of testing token lists: 18
+['"Anchor Down" lyrics',
+ '"Well, I\'m Sorry" lyrics',
+ '"Me First" lyrics',
+ '"Keep Lying To Me" lyrics',
+ '"Monday" lyrics',
+ '"Old Book" lyrics',
+ '"Scared To Be Alone" lyrics',
+ '"Late Nights In My Car" lyrics',
+ '"I Don\'t Love You Anymore" lyrics',
+ '"Island (Acoustic)" lyrics']
+[]
+
+---------- VECTOR LENGTH  8  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-8.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-8.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  8 : 0.476 
+
+
+---------- VECTOR LENGTH  16  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-16.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-16.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  16 : 0.77 
+
+
+---------- VECTOR LENGTH  32  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-32.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-32.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  32 : 1.0 
+
+
+---------- VECTOR LENGTH  64  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-64.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-64.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  64 : 0.991 
+
+
+---------- VECTOR LENGTH  128  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-128.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-128.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  128 : 1.0 
+
+
+---------- VECTOR LENGTH  256  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-256.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-256.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  256 : 1.0 
+
+
+---------- VECTOR LENGTH  512  ----------
+
+
+Working on TF-IDF vectorization
+
+TF-IDF vectorization complete, matrix saved to  tfidf-matrix-512.csv 
+
+
+Working on Doc2Vec vectorization
+
+Doc2Vec vectorization complete, matrix saved to  doc2vec-matrix-512.csv 
+
+
+Canonical correlation betwen TF-IDF and Doc2Vec for vectors of length  512 : 1.0 
+
+
+Summary of Canonoical Correlation between TF-IDF and Doc2Vec Vectorizations
+
+
+Vector Length Correlation
+
+-------------------------
+      8        0.476
+      16        0.77
+      32        1.0
+      64        0.991
+      128        1.0
+      256        1.0
+      512        1.0
+End of Script 3--------------------------
+Skip Script 4--------------------------
+Using TensorFlow backend.
+Total Characters :  2877879
+Total Vocab :  44
+Total Patterns :  2877779
+WARNING:tensorflow:From C:\Anaconda\envs\tensorflow\lib\site-packages\tensorflow\python\framework\op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+cu_dnnlstm_1 (CuDNNLSTM)     (None, 100, 256)          265216    
+_________________________________________________________________
+cu_dnnlstm_2 (CuDNNLSTM)     (None, 100, 256)          526336    
+_________________________________________________________________
+cu_dnnlstm_3 (CuDNNLSTM)     (None, 100, 256)          526336    
+_________________________________________________________________
+cu_dnnlstm_4 (CuDNNLSTM)     (None, 100, 256)          526336    
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 25600)             0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 44)                1126444   
+_________________________________________________________________
+activation_1 (Activation)    (None, 44)                0         
+=================================================================
+Total params: 2,970,668
+Trainable params: 2,970,668
+Non-trainable params: 0
+_________________________________________________________________
+Seed : 
+" ng i've learned is that
+i had to work harder and longer
+be smarter and stronger
+than the person righ "
+
+t beside me
+have the confidence and common sense
+to know there's still something inside me
+and though i gave my very best with the purest intent
+and i'll be proud when i look back
+woah woah
+it seems like it gets harder every year
+i took two steps forward but three steps back
+had to take a deep breat
+Done
+End of Script 5--------------------------

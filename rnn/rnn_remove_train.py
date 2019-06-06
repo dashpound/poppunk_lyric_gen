@@ -1,5 +1,7 @@
 # =============================================================================
 # Recurrent Neural Network for Generating Pop Punk Song Lyrics
+# This is the same model as thed RNN except that we skip the trainign process. 
+# This will load the selected weighting from rnn.py
 # Code based on https://colab.research.google.com/drive/1wlZXZBvOo93pAmTtEUeTlPsgAP4D1bLA#scrollTo=fSItHMeqsMyR
 # Code adapted by John Kiley 05/26/2019
 # =============================================================================
@@ -7,7 +9,6 @@
 # =============================================================================
 
 # Import the dependencies
-from textgenrnn import textgenrnn
 import numpy as np
 import pandas as pd
 import sys 
@@ -170,40 +171,7 @@ model.summary()
 checkpoint_name = 'Weights-LSTM-improvement-{epoch:03d}-{loss:.5f}-bigger.hdf5'
 checkpoint = ModelCheckpoint(checkpoint_name, monitor='loss', verbose = 1, save_best_only = True, mode ='min')
 callbacks_list = [checkpoint]
-#%%
-# =============================================================================
-# Train the model -- LAST RUN TIME WAS 35 HOURS on a GPU
-# =============================================================================
 
-
-# Fit the model :
-model_params = {'epochs':30,
-                'batch_size':128,
-                'callbacks':callbacks_list,
-                'verbose':1,
-                'validation_split':0.2,
-                'validation_data':None,
-                'shuffle': True,
-                'initial_epoch':0,
-                'steps_per_epoch':None,
-                'validation_steps':None}
-
-model.fit(X,
-          y,
-          epochs = model_params['epochs'],
-           batch_size = model_params['batch_size'],
-           callbacks= model_params['callbacks'],
-           verbose = model_params['verbose'],
-           validation_split = model_params['validation_split'],
-           validation_data = model_params['validation_data'],
-           shuffle = model_params['shuffle'],
-           initial_epoch = model_params['initial_epoch'],
-           steps_per_epoch = model_params['steps_per_epoch'],
-           validation_steps = model_params['validation_steps'])
-
-# =============================================================================
-# Load the selected model weights from the selected .hdf5 file 
-# =============================================================================
 #%%
 # Load wights file :
 wights_file = 'Weights-LSTM-improvement-001-0.74490-bigger.hdf5' # weights file path
